@@ -1,20 +1,20 @@
-# Gerador de QR Code e senhas no terminal
+# Terminal QR code and password generator
 
-Ferramenta de estudo em Node.js com menu interativo para gerar QR Codes e senhas.
+Node.js study tool with an interactive menu for generating QR codes and passwords.
 
-## Funcionalidades
+## Features
 
-- Escolha da operação pelo terminal.
-- Geração de QR Code a partir de um texto ou link.
-- Configuração dos caracteres e do tamanho das senhas por variáveis de ambiente.
+- Selects an operation through the terminal.
+- Generates a QR code from text or a URL.
+- Configures password length and character sets through environment variables.
 
-## Tecnologias
+## Technologies
 
-Node.js, JavaScript, prompt, chalk e qrcode-terminal.
+Node.js, JavaScript, prompt, chalk and qrcode-terminal.
 
-## Executar localmente
+## Run locally
 
-Use uma versão de Node.js com suporte à opção --env-file.
+Use a Node.js version that supports --env-file.
 
 ```bash
 git clone https://github.com/chruscinskiDiego/node-qrcode-password-generator.git
@@ -24,11 +24,14 @@ cp .env.example .env
 npm start
 ```
 
-## Organização
+## Configuration
 
-`src/prompts/` reúne as perguntas; `src/services/qr-code/` e `src/services/password/` implementam as operações.
+Set PASSWORD_LENGTH, UPPERCASE_LETTERS, LOWERCASE_LETTERS, NUMBERS and SPECIAL_CHARACTERS in .env. See `src/services/password/util/permitted-characters.js` for the expected values.
 
-## Escopo e limitações
+## Structure
 
-Configure PASSWORD_LENGTH, UPPERCASE_LETTERS, LOWERCASE_LETTERS, NUMBERS e SPECIAL_CHARACTERS no .env. Consulte `src/services/password/util/permitted-characters.js` para os valores esperados. É um exercício de programação; a geração de senhas não foi auditada para uso de segurança.
+`src/prompts/` contains questions; `src/services/qr-code/` and `src/services/password/` implement the operations.
 
+## Scope and limitations
+
+This is a programming exercise. Password generation has not been audited for security-sensitive use.
